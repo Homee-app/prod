@@ -1,0 +1,10 @@
+.admin-btn {
+    font-size: 16px;
+    background-color: var(--secondarycolor);
+    color: #fff;
+    padding: 10px 30px;
+}
+
+.form-valid-error {
+    color: #fa5c7c;
+}

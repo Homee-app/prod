@@ -1,0 +1,71 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>{{ env('APP_NAME') }}</title>
+
+</head>
+<style>
+    a {
+        color: #3cbf5f;
+    }
+</style>
+
+<body style="margin:0px; padding:0px; background: #eee;">
+    <table style="max-width: 100%; background: #fff;" class="deviceWidth" width="660" cellspacing="0" cellpadding="0"
+        border="0" align="center">
+        <tbody>
+            <tr>
+                <td style="padding:0px;" bgcolor="#ffffff">
+
+                    <table
+                        style="width:100%; border-collapse:collapse; font-family: 'Roboto', sans-serif; font-size: 14px;">
+                        <tr>
+                            <td
+                                style="background:#ecfbf0; background-color: #ecfbf0; color: #000; font-weight: bold; font-size: 20px; text-align:center; padding:20px 0 20px;">
+                                <img src="{{asset('assets/images/logo.svg')}}" alt="logo" style="width: 100px;" width="100px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="text-align:left; padding:20px 20px; word-break: break-word; color: #000000; font-size: 14px; ">
+
+                                <p style="line-height: 28px;margin: 0 0 20px 0;color: #000000;">
+                                    Welcome to <strong>{{ env('APP_NAME') }}</strong>
+                                </p>
+
+                                <p style="line-height: 28px;margin: 0 0 20px 0;color: #000000;">
+                                    Hello,
+                                    {{-- <strong> ##Name##,</strong> --}}
+                                </p>
+                                {{-- <p>Thank you for choosing {{ env('APP_NAME') }}. Use the following OTP to complete your
+                                    registration procedures. OTP is valid for 10 minutes</p> --}}
+                                <p>Use the following code to verify your identity and complete your admin login. This code is valid for 10 minutes.</p>
+
+                                <br>
+                                <p><span style="margin-bottom: 20px; background: #3cbf5f; padding: 10px 20px; color: #fff; font-size: 14px; font-weight: bold; text-decoration: none;">
+                                    {{ $otp }}
+                                </span></p>
+                                
+                                <br>
+
+                                <p style="margin: 0">We look forward to meeting you.</p>
+                                <p style="line-height: 28px;margin: 0 0 20px 0;">
+                                    <strong>{{ env('APP_NAME') }} App,</strong><br />
+                                    {{-- The  Team --}}
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

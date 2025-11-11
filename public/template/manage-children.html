@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ziloo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/fav-icon.png">
+</head>
+
+    <body class="innerbody">
+        <aside class="sidebar">
+            <div class="closemenu-btn"><img src="images/Close_round_fill.png" class="img-fluid"></div>
+            <div class="text-center sildebarlogo">
+                <img src="images/sidebarlogo.svg" class="img-fluid logo-full" >
+                <img src="images/sidebarlogo.svg" class="img-fluid logo-icon">
+            </div>
+            <div class="menubar-holder">
+                <ul class="menubar">
+                    <li class="">
+                        <a href="dashboard.html"><img src="images/dashboard-icon.svg"> <span>Dashboard</span></a>
+                    </li>
+                    <li class="active mt-2">
+                        <a href="manage-children.html"><img src="images/manage-children-icon.svg"> <span>Manage Children</span></a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="manage-parents.html"><img src="images/manage parents-icon.svg"> <span>Manage Parents</span></a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="manage-bussiness.html"><img src="images/manage-businesses-icon.svg"> <span>Manage Businesses</span></a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="reported-content.html"><img src="images/reported-content-icon.svg"> <span>Reported Content</span></a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="reported-comment.html"><img src="images/reported-comment-icon.svg"> <span>Reported Comment</span></a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="flagged-content.html"><img src="images/flagged-content-icon.svg"> <span>Flagged Content</span></a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="coin-transaction.html"><img src="images/coin-transactions.svg"> <span>Coin Transactions</span></a>
+                    </li>
+                  
+                </ul>
+                <ul class="dropdown-menu">
+                    <li class="d-flex px-2"><img src="images/lock.svg" alt="">
+                        <a class="dropdown-item ps-2" href="#">Change-Password</a>
+                    </li>
+                    <li class="d-flex px-2"><img src="images/logout.svg" alt="">
+                        <a class="dropdown-item ps-2" href="#">Logout</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </aside>
+        <!--header part-->
+        <div class="header">
+            <a href="javascript:void(0)" class="slidetoggle"><img src="images/menu (2).svg"> </a>
+            <div class="user-set-menu dropdown">
+                <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                    <img src="images/user-lg-pic.svg" class="me-2">
+                    <div style="line-height: 1;" class="pe-2">
+                        <h6>Suzie Weeding</h6>
+                    </div>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="d-flex px-2"><img src="images/lock.svg" alt="">
+                        <a class="dropdown-item ps-2" href="#">Change-Password</a>
+                    </li>
+                    <li class="d-flex px-2"><img src="images/logout.svg" alt="">
+                        <a class="dropdown-item ps-2" href="#">Logout</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!--header part-->
+    <!--PAGE CONTENT-->
+    <div class="container-fluid pt-3 bg">
+        <div class="page-content-wrapper">
+            <div class="page-title-row ">
+                <h4 class="mb-0 ms-3">Manage Children</h4>
+            </div>
+            <div class="white-body-card ">
+                <div class="filter-row align-items-center mb-3">
+                    <div class="tp-search-input mb-2">
+                        <input type="text" class="form-control icon-holder" placeholder="search">
+                        <span class="input-icon">
+                            <img src="images/search-icon.svg">
+                        </span>
+                    </div>
+<!-- <a href="#" class="export-btn mb-2"><img src="images/export-icon.svg"> Export</a> -->
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>S. No.</th>
+                                <th>NAME</th>
+                                <th>AGE</th>
+                                <th>EMAIL</th>
+                                <th>STATUS</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>Amelia Smith</td>
+                                <td>14 Years</td>
+                                <td>amelia-smith@gmail.com</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider">
+                                    </span>
+                                </label></td>
+                                <td>
+                                    <a href="manage-children-detail.html"><img src="images/eye-icon.svg"></a>
+                                    <a href=""><img src="images/delete-circle-btn.svg" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>Amelia Smith</td>
+                                <td>14 Years</td>
+                                <td>amelia-smith@gmail.com</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider">
+                                    </span>
+                                </label></td>
+                                <td>
+                                    <a href="manage-children-detail.html"><img src="images/eye-icon.svg"></a>
+                                    <a href=""><img src="images/delete-circle-btn.svg" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>Amelia Smith</td>
+                                <td>14 Years</td>
+                                <td>amelia-smith@gmail.com</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider">
+                                    </span>
+                                </label></td>
+                                <td>
+                                    <a href="manage-children-detail.html"><img src="images/eye-icon.svg"></a>
+                                    <a href=""><img src="images/delete-circle-btn.svg" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td>Amelia Smith</td>
+                                <td>14 Years</td>
+                                <td>amelia-smith@gmail.com</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider">
+                                    </span>
+                                </label></td>
+                                <td>
+                                    <a href="manage-children-detail.html"><img src="images/eye-icon.svg"></a>
+                                    <a href=""><img src="images/delete-circle-btn.svg" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5.</td>
+                                <td>Amelia Smith</td>
+                                <td>14 Years</td>
+                                <td>amelia-smith@gmail.com</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider">
+                                    </span>
+                                </label></td>
+                                <td>
+                                    <a href="manage-children-detail.html"><img src="images/eye-icon.svg"></a>
+                                    <a href=""><img src="images/delete-circle-btn.svg" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6.</td>
+                                <td>Amelia Smith</td>
+                                <td>14 Years</td>
+                                <td>amelia-smith@gmail.com</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider">
+                                    </span>
+                                </label></td>
+                                <td>
+                                    <a href="manage-children-detail.html"><img src="images/eye-icon.svg"></a>
+                                    <a href=""><img src="images/delete-circle-btn.svg" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7.</td>
+                                <td>Amelia Smith</td>
+                                <td>14 Years</td>
+                                <td>amelia-smith@gmail.com</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider">
+                                    </span>
+                                </label></td>
+                                <td>
+                                    <a href="manage-children-detail.html"><img src="images/eye-icon.svg"></a>
+                                    <a href=""><img src="images/delete-circle-btn.svg" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8.</td>
+                                <td>Amelia Smith</td>
+                                <td>14 Years</td>
+                                <td>amelia-smith@gmail.com</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider">
+                                    </span>
+                                </label></td>
+                                <td>
+                                    <a href="manage-children-detail.html"><img src="images/eye-icon.svg"></a>
+                                    <a href=""><img src="images/delete-circle-btn.svg" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9.</td>
+                                <td>Amelia Smith</td>
+                                <td>14 Years</td>
+                                <td>amelia-smith@gmail.com</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider">
+                                    </span>
+                                </label></td>
+                                <td>
+                                    <a href="manage-children-detail.html"><img src="images/eye-icon.svg"></a>
+                                    <a href=""><img src="images/delete-circle-btn.svg" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10.</td>
+                                <td>Amelia Smith</td>
+                                <td>14 Years</td>
+                                <td>amelia-smith@gmail.com</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider">
+                                    </span>
+                                </label></td>
+                                <td>
+                                    <a href="manage-children-detail.html"><img src="images/eye-icon.svg"></a>
+                                    <a href=""><img src="images/delete-circle-btn.svg" ></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-result mt-3">
+                    <select class="form-select me-3" style="width:70px;">
+                        <option selected="">10</option>
+                        <option value="1">One</option>
+                    </select>
+                    <p class="mb-0">Showing 5 of 5 entries</p>
+                    <nav class="ms-auto">
+                        <ul class="pagination mb-0">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true"><img src="images/first-page-icon.png"></span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true"><img src="images/pre-page.png"></span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item "><a class="page-link" href="#">2</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true"><img src="images/next-page-icon.png"></span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true"><img src="images/last-page-icon.png"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="footer">
+           
+        </div> -->
+    </div>
+    <!--PAGE CONTENT-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

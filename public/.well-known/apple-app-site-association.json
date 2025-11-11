@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "FFH6MAR93L.com.homeeapp",
+        "paths": [   "/tenant", "/tenant/*" , "/room", "/room/*" ]
+      }
+    ]
+  }
+}

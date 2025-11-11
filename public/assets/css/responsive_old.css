@@ -1,0 +1,126 @@
+
+
+@media only screen and (min-width:992px){ 
+	/*--nav bar css--*/
+
+	.menu-collapse .sidebar .sildebarlogo img{
+		width: 60px;
+		transition: all .1s ease-in;
+		margin-left: 5px;
+	}
+	.menu-collapse .sidebar{
+		width:88px;
+		padding: 23px 10px;
+		transition: all .1s ease-in;
+	}
+	.menu-collapse .menubar li > a span{
+		white-space: nowrap;
+		visibility: hidden;
+		transition: all .1s ease-in;
+		display: none;
+	}
+	.innerbody.menu-collapse{
+		padding-left: 68px;
+	}	
+	}
+@media only screen and (max-width:991px){
+	.closemenu-btn{
+		display: block;
+		text-align: right;
+		cursor: pointer;
+		filter: invert(1) brightness(0);
+	}
+	.innerbody{
+		padding-left: 0;
+	}
+	.sidebar{
+		left: -100%;
+	}
+	.innerbody.menu-collapse .sidebar{
+		left: 0;
+		box-shadow: 4px 0px 10px rgba(0,0,0,.2);
+	}
+	.menu-collapse .sildebarlogo .logo-full{
+		display: inline-flex;
+	}
+	.menu-collapse .sildebarlogo .logo-icon{
+	display: none;
+	}
+	.login-left{
+		display: none;
+	}
+
+}
+
+/* @media only screen and (max-width: 1530px){
+	.sidebar-login{
+		display: none;
+	}
+	.log-container{
+		justify-content: center;
+		align-items: center;
+	}
+
+} */
+@media only screen and (max-width: 767px){
+/* .sidebar-login{
+display: none;
+}
+.log-logo {
+   display: none;
+} */
+/* .login-wrapper{
+padding-left: 0;} */
+.card-course{
+	margin-top: 10px;
+}
+.flag-deatil{
+	margin-top: 20px;
+}
+	.header{
+		flex-wrap: wrap;
+	}
+	.tp-search{
+		max-width: 100%;
+		flex:0 0 calc(100% - 45px);
+		margin-bottom: 10px;
+	}
+	.table-result nav{
+		width: 100%;
+		margin-top: 10px;
+	}
+	.table-result{
+		flex-wrap:wrap ;
+	}
+	.form-step-process .step-name{
+		display: none;
+	}
+	.add-assign-part-form .col{
+		flex: 0 0 100%;
+		margin: 0 0 10px;
+	}
+}
+@media only screen and (max-width: 1582px){
+	.user-detail{
+		margin-top: 20px;
+	}
+}
+	/* @media only screen and (max-width: 1100px){
+		.card-course{
+			min-height: calc(100vh - 550px);
+		}
+	
+} */
+ /* @media  screen and (max-width: 1100px ){
+	.card-course{
+		min-height: calc(100vh - 180px);
+		
+	  }
+
+ } */
+	
+ 
+@media only screen and (max-width: 576px){
+	
+}
+

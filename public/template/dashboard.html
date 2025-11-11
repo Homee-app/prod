@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ziloo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/fav-icon.png">
+</head>
+<body class="innerbody">
+    <aside class="sidebar">
+        <div class="closemenu-btn"><img src="images/Close_round_fill.png" class="img-fluid"></div>
+        <div class="text-center sildebarlogo">
+            <img src="images/sidebarlogo.svg" class="img-fluid logo-full">
+            <img src="images/sidebarlogo.svg" class="img-fluid logo-icon">
+        </div>
+        <div class="menubar-holder">
+            <ul class="menubar">
+                <li class="active">
+                    <a href="dashboard.html"><img src="images/dashboard-icon.svg"> <span>Dashboard</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="manage-children.html"><img src="images/manage-children-icon.svg"> <span>Manage
+                            Children</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="manage-children.html"><img src="images/manage parents-icon.svg"> <span>Manage
+                            Parents</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="manage-bussiness.html"><img src="images/manage-businesses-icon.svg"> <span>Manage
+                            Businesses</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="reported-content.html"><img src="images/reported-content-icon.svg"> <span>Reported
+                            Content</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="reported-comment.html"><img src="images/reported-comment-icon.svg"> <span>Reported
+                            Comment</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="flagged-content.html"><img src="images/flagged-content-icon.svg"> <span>Flagged
+                            Content</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="coin-transaction.html"><img src="images/coin-transactions.svg"> <span>Coin Transactions</span></a>
+                </li>
+
+            </ul>
+            <!-- <ul class="menubar">
+                    <li class="">
+                        <a href="#"><img src="images/logout-icon.svg">
+                            <span>Logout</span></a>
+                    </li>
+                </ul> -->
+        </div>
+    </aside>
+    <!--header part-->
+    <div class="header">
+        <a href="javascript:void(0)" class="slidetoggle"><img src="images/menu (2).svg"> </a>
+        <div class="user-set-menu dropdown">
+            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                <img src="images/user-lg-pic.svg" class="me-2">
+                <div style="line-height: 1;" class="pe-2">
+                    <h6>Suzie Weeding</h6>
+                </div>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="d-flex px-2"><img src="images/lock.svg" alt="">
+                    <a class="dropdown-item ps-2" href="#">Change-Password</a>
+                </li>
+                <li class="d-flex px-2"><img src="images/logout.svg" alt="">
+                    <a class="dropdown-item ps-2" href="#">Logout</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <!--header part-->
+    <!--PAGE CONTENT-->
+    <div class="container-fluid">
+        <div class="page-content-wrapper">
+            <h4 class="my-3">Dashboard</h4>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="dash-item">
+                        <a href="#">
+                            <div class="dash-item-icon">
+                                <img src="images/total-children.svg">
+                            </div>
+                            <div>
+                                <h6>Total Children </h6>
+                                <p class="mb-0">310</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="dash-item">
+                        <a href="#">
+                            <div class="dash-item-icon">
+                                <img src="images/total-parent.svg">
+                            </div>
+                            <div>
+                                <h6>Total Parent </h6>
+                                <p class="mb-0">310</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="dash-item">
+                        <a href="#">
+                            <div class="dash-item-icon">
+                                <img src="images/total-businesses.svg">
+                            </div>
+                            <div>
+                                <h6>Total Businesses</h6>
+                                <p class="mb-0">200</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="dash-item">
+                        <a href="#">
+                            <div class="dash-item-icon">
+                                <img src="images/total-reported-comment.svg">
+                            </div>
+                            <div>
+                                <h6>Total Reported Comment</h6>
+                                <p class="mb-0">15</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="dash-item">
+                        <a href="#">
+                            <div class="dash-item-icon">
+                                <img src="images/total-flagged-content.svg">
+                            </div>
+                            <div>
+                                <h6>Total Flagged Content </h6>
+                                <p class="mb-0">12</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="dash-item">
+                        <a href="#">
+                            <div class="dash-item-icon">
+                                <img src="images/total-reported-content.svg">
+                            </div>
+                            <div>
+                                <h6>Total Reported Content </h6>
+                                <p class="mb-0">10</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="dash-item">
+                        <a href="#">
+                            <div class="dash-item-icon">
+                                <img src="images/total-reported-content.svg">
+                            </div>
+                            <div>
+                                <h6>Total Coins Sold</h6>
+                                <p class="mb-0">20</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="dash-item">
+                        <a href="#">
+                            <div class="dash-item-icon">
+                                <img src="images/total-reported-content.svg">
+                            </div>
+                            <div>
+                                <h6>Total Coins Purchased</h6>
+                                <p class="mb-0">15</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+        </div>
+    </div>
+    <!--PAGE CONTENT-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

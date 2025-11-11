@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ziloo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/fav-icon.png">
+</head>
+
+<body class="innerbody">
+    <aside class="sidebar">
+        <div class="closemenu-btn"><img src="images/Close_round_fill.png" class="img-fluid"></div>
+        <div class="text-center sildebarlogo">
+            <img src="images/sidebarlogo.svg" class="img-fluid logo-full">
+            <img src="images/sidebarlogo.svg" class="img-fluid logo-icon">
+        </div>
+        <div class="menubar-holder">
+            <ul class="menubar">
+                <li class="">
+                    <a href="dashboard.html"><img src="images/dashboard-icon.svg"> <span>Dashboard</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="manage-children.html"><img src="images/manage-children-icon.svg"> <span>Manage
+                            Children</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="manage-parents.html"><img src="images/manage parents-icon.svg"> <span>Manage
+                            Parents</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="manage-bussiness.html"><img src="images/manage-businesses-icon.svg"> <span>Manage
+                            Businesses</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="reported-content.html"><img src="images/reported-content-icon.svg"> <span>Reported
+                            Content</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="reported-comment.html"><img src="images/reported-comment-icon.svg"> <span>Reported
+                            Comment</span></a>
+                </li>
+                <li class="active mt-2">
+                    <a href="flagged-content.html"><img src="images/flagged-content-icon.svg"> <span>Flagged
+                            Content</span></a>
+                </li>
+                <li class="mt-2">
+                    <a href="coin-transaction.html"><img src="images/coin-transactions.svg"> <span>Coin
+                            Transactions</span></a>
+                </li>
+
+            </ul>
+            <!-- <ul class="menubar">
+                    <li class="">
+                        <a href="#"><img src="images/logout-icon.svg">
+                            <span>Logout</span></a>
+                    </li>
+                </ul> -->
+        </div>
+    </aside>
+    <!--header part-->
+    <div class="header">
+        <a href="javascript:void(0)" class="slidetoggle"><img src="images/menu (2).svg"> </a>
+        <div class="user-set-menu dropdown">
+            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                <img src="images/user-lg-pic.svg" class="me-2">
+                <div style="line-height: 1;" class="pe-2">
+                    <h6>Suzie Weeding</h6>
+                </div>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--header part-->
+    <!--PAGE CONTENT-->
+    <div class="container-fluid pt-3 bg">
+        <div class="page-content-wrapper">
+            <div class="page-title-row ">
+                <h4 class="mb-0 ms-3">Flagged Content</h4>
+            </div>
+            <div class="white-body-card ">
+                <div class="filter-row align-items-center mb-3">
+                    <div class="tp-search-input mb-2">
+                        <input type="text" class="form-control icon-holder" placeholder="search">
+                        <span class="input-icon">
+                            <img src="images/search-icon.svg">
+                        </span>
+                    </div>
+                    <!-- <a href="#" class="export-btn mb-2"><img src="images/export-icon.svg"> Export</a> -->
+                    <div class="d-flex filter ">
+                        <p>Filter by:</p>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Violation Type</option>
+                            <option value="1">Offensive</option>
+                            <option value="2">Abusive</option>
+                            <option value="3">Inappropriate</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>S. No.</th>
+                                <th>TITLE</th>
+                                <th>CATEGORY</th>
+                                <th>VOILATION TYPE</th>
+                                <th>CREATED BY</th>
+                                <TH>CREATED ON</TH>
+                                <th>HIDE CONTENT</th>
+                                <th>RIVIEW ACTION</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>
+                                    <img src="images/table-img.png" alt="img"> Origami Master
+                                </td>
+                                <td>Post</td>
+                                <td>Offensive</td>
+                                <td>John Smith</td>
+                                <td>10/02/2025</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider">
+                                        </span>
+                                    </label></td>
+                                <td>
+                                    <a href="" data-bs-toggle="modal"><img src="images/tick-circle.svg"></a>
+                                    <a href="" data-bs-toggle="modal"><img src="images/cross.svg"></a>
+                                </td>
+                                <td><a href="flagges-content-detail.html"><img src="images/eye-icon.svg"></a></td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>
+                                    <img src="images/table-img.png" alt="img"> Origami Master
+                                </td>
+                                <td>Post</td>
+                                <td>Offensive</td>
+                                <td>John Smith</td>
+                                <td>10/02/2025</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider">
+                                        </span>
+                                    </label></td>
+                                <td>
+                                    <a href="" data-bs-toggle="modal"><img src="images/tick-circle.svg"></a>
+                                    <a href="" data-bs-toggle="modal"><img src="images/cross.svg"></a>
+                                </td>
+                                <td><a href="flagges-content-detail.html"><img src="images/eye-icon.svg"></a></td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>
+                                    <img src="images/table-img.png" alt="img"> Origami Master
+                                </td>
+                                <td>Post</td>
+                                <td>Offensive</td>
+                                <td>John Smith</td>
+                                <td>10/02/2025</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider">
+                                        </span>
+                                    </label></td>
+                                <td>
+                                    <a href="" data-bs-toggle="modal"><img src="images/tick-circle.svg"></a>
+                                    <a href="" data-bs-toggle="modal"><img src="images/cross.svg"></a>
+                                </td>
+                                <td><a href="flagges-content-detail.html"><img src="images/eye-icon.svg"></a></td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td>
+                                    <img src="images/table-img.png" alt="img"> Origami Master
+                                </td>
+                                <td>Post</td>
+                                <td>Offensive</td>
+                                <td>John Smith</td>
+                                <td>10/02/2025</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider">
+                                        </span>
+                                    </label></td>
+                                <td>
+                                    <a href="" data-bs-toggle="modal"><img src="images/tick-circle.svg"></a>
+                                    <a href="" data-bs-toggle="modal"><img src="images/cross.svg"></a>
+                                </td>
+                                <td><a href="flagges-content-detail.html"><img src="images/eye-icon.svg"></a></td>
+                            </tr>
+                            <tr>
+                                <td>5.</td>
+                                <td>
+                                    <img src="images/table-img.png" alt="img"> Origami Master
+                                </td>
+                                <td>Post</td>
+                                <td>Offensive</td>
+                                <td>John Smith</td>
+                                <td>10/02/2025</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider">
+                                        </span>
+                                    </label></td>
+                                <td>
+                                    <a href="" data-bs-toggle="modal"><img src="images/tick-circle.svg"></a>
+                                    <a href="" data-bs-toggle="modal"><img src="images/cross.svg"></a>
+                                </td>
+                                <td><a href="flagges-content-detail.html"><img src="images/eye-icon.svg"></a></td>
+                            </tr>
+                            <tr>
+                                <td>6.</td>
+                                <td>
+                                    <img src="images/table-img.png" alt="img"> Origami Master
+                                </td>
+                                <td>Post</td>
+                                <td>Offensive</td>
+                                <td>John Smith</td>
+                                <td>10/02/2025</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider">
+                                        </span>
+                                    </label></td>
+                                <td>
+                                    <a href="" data-bs-toggle="modal"><img src="images/tick-circle.svg"></a>
+                                    <a href="" data-bs-toggle="modal"><img src="images/cross.svg"></a>
+                                </td>
+                                <td><a href="flagges-content-detail.html"><img src="images/eye-icon.svg"></a></td>
+                            </tr>
+                            <tr>
+                                <td>7.</td>
+                                <td>
+                                    <img src="images/table-img.png" alt="img"> Origami Master
+                                </td>
+                                <td>Post</td>
+                                <td>Offensive</td>
+                                <td>John Smith</td>
+                                <td>10/02/2025</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider">
+                                        </span>
+                                    </label></td>
+                                <td>
+                                    <a href="" data-bs-toggle="modal"><img src="images/tick-circle.svg"></a>
+                                    <a href="" data-bs-toggle="modal"><img src="images/cross.svg"></a>
+                                </td>
+                                <td><a href="flagges-content-detail.html"><img src="images/eye-icon.svg"></a></td>
+                            </tr>
+                            <tr>
+                                <td>8.</td>
+                                <td>
+                                    <img src="images/table-img.png" alt="img"> Origami Master
+                                </td>
+                                <td>Post</td>
+                                <td>Offensive</td>
+                                <td>John Smith</td>
+                                <td>10/02/2025</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider">
+                                        </span>
+                                    </label></td>       
+                                <td>
+                                    <a href="" data-bs-toggle="modal"><img src="images/tick-circle.svg"></a>
+                                    <a href="" data-bs-toggle="modal"><img src="images/cross.svg"></a>
+                                </td>
+                                <td><a href="flagges-content-detail.html"><img src="images/eye-icon.svg"></a></td>
+                            </tr>
+                            <tr>
+                                <td>9.</td>
+                                <td>
+                                    <img src="images/table-img.png" alt="img"> Origami Master
+                                </td>
+                                <td>Post</td>
+                                <td>Offensive</td>
+                                <td>John Smith</td>
+                                <td>10/02/2025</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider">
+                                        </span>
+                                    </label></td>
+                                <td>
+                                    <a href="" data-bs-toggle="modal"><img src="images/tick-circle.svg"></a>
+                                    <a href="" data-bs-toggle="modal"><img src="images/cross.svg"></a>
+                                </td>
+                                <td><a href="flagges-content-detail.html"><img src="images/eye-icon.svg"></a></td>
+                            </tr>
+                            <tr>
+                                <td>10.</td>
+                                <td>
+                                    <img src="images/table-img.png" alt="img"> Origami Master
+                                </td>
+                                <td>Post</td>
+                                <td>Offensive</td>
+                                <td>John Smith</td>
+                                <td>10/02/2025</td>
+                                <td><label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider">
+                                        </span>
+                                    </label></td>
+                                <td>
+                                    <a href="" data-bs-toggle="modal"><img src="images/tick-circle.svg"></a>
+                                    <a href="" data-bs-toggle="modal"><img src="images/cross.svg"></a>
+                                </td>
+                                <td><a href="flagges-content-detail.html"><img src="images/eye-icon.svg"></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-result mt-3">
+                    <select class="form-select me-3" style="width:70px;">
+                        <option selected="">10</option>
+                        <option value="1">One</option>
+                    </select>
+                    <p class="mb-0">Showing 5 of 5 entries</p>
+                    <nav class="ms-auto">
+                        <ul class="pagination mb-0">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true"><img src="images/first-page-icon.png"></span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true"><img src="images/pre-page.png"></span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item "><a class="page-link" href="#">2</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true"><img src="images/next-page-icon.png"></span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true"><img src="images/last-page-icon.png"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="footer">
+           
+        </div> -->
+    </div>
+    <!--PAGE CONTENT-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

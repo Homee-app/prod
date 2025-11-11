@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.homee_product_app",
+      "sha256_cert_fingerprints": [
+        "21:08:B9:90:DC:BA:D5:DE:68:84:88:0B:E5:02:E9:4C:85:3E:80:B3:86:97:24:AF:C4:66:51:36:75:71:72:09",
+        "E3:0B:B5:6D:42:25:E7:BE:46:26:19:80:16:A5:F9:19:3B:43:61:C7:31:0F:9E:BF:EB:86:CF:5C:BD:7C:42:8C"
+      ]
+    }
+  }
+]
