@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\QuestionResource;
 use App\Models\Question;
+use App\Models\QuestionsOption;
 use App\Models\User;
+use App\Models\UserIdentity;
 use App\Services\Notifications\NotificationService;
 use App\Traits\Common_trait;
 use Illuminate\Http\Request;
@@ -19,7 +22,7 @@ class AdminUserController extends Controller
         $search = $request->input('search');
 
         $users = User::query()->with(['userIdentity'])
-            ->where('role', '!=', 1) // Exclude admin users
+            ->where('role', '!=', 1) // ✅ Exclude admin users
             ->when($search, function ($q) use ($search) {
                 $q->where(function ($query) use ($search) {
                     $query->where('first_name', 'like', "%{$search}%")

@@ -41,6 +41,24 @@ let next = document.getElementById('next');
 let active = 0;
 let lengthitems = items.length - 1;
 
+// next.onclick = function() {
+//     if (active + 1 > lengthitems) {
+//         active = 0;
+//     } else {
+//         active = active + 1;
+//     }
+//     reloadslider();
+// }
+
+// prev.onclick = function() {
+//     if (active - 1 < 0) {
+//         active = lengthitems;
+//     } else {
+//         active = active - 1;
+//     }
+//     reloadslider();
+// }
+
 let autoslide = setInterval(() => { next.click(); }, 3000);
 
 function reloadslider() {

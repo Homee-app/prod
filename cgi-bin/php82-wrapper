@@ -1,0 +1,3 @@
+#!/bin/bash
+exec /opt/remi/php82/root/usr/bin/php-cgi
+

@@ -109,4 +109,8 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'support' => [
+        'email' => env('SUPPORT_EMAIL_ADDRESS','adminds@yopmail.com')
+    ],
+
 ];
