@@ -117,8 +117,8 @@ class ApiAuthController extends BaseApiController
                     ['token' => $token]
                 );
 
-                Boost::create(['boost_count' => 1, 'user_id' => $user->id]);
-                GoldenKey::create(['key_count' => 2, 'user_id' => $user->id]);
+                Boost::create(['boost_count' => config('constants.default_boost_count'), 'user_id' => $user->id]);
+                GoldenKey::create(['key_count' => config('constants.default_key_count'), 'user_id' => $user->id]);
 
                 DB::commit();
                 return $this->sendResponse($result, __('messages.register', ['item' => 'User']));

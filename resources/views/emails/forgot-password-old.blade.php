@@ -28,7 +28,7 @@
                         <tr>
                             <td
                                 style="background:#ecfbf0; background-color: #ecfbf0; color: #000; font-weight: bold; font-size: 20px; text-align:center; padding:20px 0 20px;">
-                                <img src="{{asset('assets/images/logo.svg')}}" alt="logo" style="width: 100px;" width="100px">
+                                <img src="{{asset('assets/images/logo.png')}}" alt="logo" style="width: 100px;" width="100px">
                             </td>
                         </tr>
                         <tr>

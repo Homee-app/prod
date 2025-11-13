@@ -118,8 +118,8 @@ class SocialLoginController extends Controller
 
         if ($user->wasRecentlyCreated) {
             $weeklyChats = config('constants.weekly_chat_count');
-            Boost::create(['boost_count' => 1, 'user_id' => $user->id]);
-            GoldenKey::create(['key_count' => 2, 'user_id' => $user->id]);
+            Boost::create(['boost_count' => config('constants.default_boost_count'), 'user_id' => $user->id]);
+            GoldenKey::create(['key_count' => config('constants.default_key_count'), 'user_id' => $user->id]);
 
             QuestionAnswerUser::firstOrCreate(
                 [

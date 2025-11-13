@@ -109,7 +109,7 @@ class QuestionOptionsSeeder extends Seeder
             ['question_id' => $smokeQuestionId, 'label_for_app' => 'No', 'label_for_web' => 'No'],
 
             // Dietary requirements (multiple choice)
-            ['question_id' => $dietQuestionId, 'label_for_app' => 'Lactose Intolerant', 'label_for_web' => 'Lactose Intolerant'],
+            ['question_id' => $dietQuestionId, 'label_for_app' => 'Lactose Intolerance', 'label_for_web' => 'Lactose Intolerance'],
             ['question_id' => $dietQuestionId, 'label_for_app' => 'Vegetarian', 'label_for_web' => 'Vegetarian'],
             ['question_id' => $dietQuestionId, 'label_for_app' => 'Vegan', 'label_for_web' => 'Vegan'],
             ['question_id' => $dietQuestionId, 'label_for_app' => 'Pescatarian', 'label_for_web' => 'Pescatarian'],

@@ -161,7 +161,7 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label>Do you have any dietary requirements?</label>
-                                                <p>Lactose Intolerant, Vegetarian</p>
+                                                <p>Lactose Intolerance, Vegetarian</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">

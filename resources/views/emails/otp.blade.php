@@ -18,7 +18,7 @@
               <table border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td align="center">
-                    <img src="{{asset('assets/images/logo.svg')}}" alt="Homee Logo" style="width: 100px;" width="100px">
+                    <img src="{{asset('assets/images/logo.png')}}" alt="Homee Logo" style="width: 100px;" width="100px">
                 
                   </td>
                 </tr>
@@ -42,7 +42,7 @@
                 </tr>
                 <tr>
                   <td align="center" style="font-size:16px; color:#555555; line-height:1.6;">
-                    We received a request to reset your password. Please use the verification code below to proceed. 
+                    We received a request to OTP verification. Please use the verification code below to proceed. 
                     <br>(This code will expire in <strong>15 minutes</strong>):
                   </td>
                 </tr>

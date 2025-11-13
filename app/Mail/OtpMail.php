@@ -28,7 +28,7 @@ class OtpMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: env('APP_NAME') . ' Verification Code',
+            subject: env('APP_NAME') . ' Verification Code: ' . $this->otp,
         );
     }
 
