@@ -145,7 +145,7 @@ class ApiSubscriptionController extends BaseApiController
         $currentTime = now();
         $expireTime = is_production() ? $currentTime->addDay() : $currentTime->addHour();
         if (!$boost || $boost->boost_count <= 0) {
-            return ApiResponse::error('No boosts available.');
+            return ApiResponse::error(__('messages.no_boost'));
         }
         $boost->decrement('boost_count', 1);
         $usage = $curreantUser->boostUsages()->create([
@@ -218,7 +218,7 @@ class ApiSubscriptionController extends BaseApiController
         $curreantUser = User::find($request->user_id);
         $key = $curreantUser->keys()->first();
         if (!$key) {
-            return ApiResponse::error('No golden keys found.');
+            return ApiResponse::error(__('messages.no_key'));
         }
         $key->increment('key_count', 1);
         return ApiResponse::success([

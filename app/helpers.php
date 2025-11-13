@@ -59,7 +59,6 @@ if (!function_exists('deleteFromS3')) {
         if (!$filePath) {
             return false;
         }
-
         try {
             return Storage::disk('s3')->delete($filePath);
         } catch (\Exception $e) {
@@ -126,7 +125,6 @@ if (!function_exists('makeAnswerSting')) {
                 }
             }
         };
-
         return implode(', ', $value);
     }
 }
@@ -134,13 +132,11 @@ if (!function_exists('makeAnswerSting')) {
 if (!function_exists('checkString')) {
     function checkString($que, $val)
     {
-
         $prefixStringArray = [
             71 => '$',
             73 => '$',
             74 => '$',
         ];
-
         $suffixStringArray = [
             58 => 'Bedrooms',
             59 => 'Bathrooms',
@@ -148,15 +144,12 @@ if (!function_exists('checkString')) {
             73 => 'Approximate Cost',
             74 => 'Bond',
         ];
-
         if ($que === 72) {
             $val = ($val == 'Yes') ? 'bills included ' : 'bills not included';
         }
-
         if ($que === 75) {
             $val = \Carbon\Carbon::createFromFormat('d/m/Y', $val)->format('j F Y');
         }
-
         $prefix = $prefixStringArray[$que] ?? '';
         $suffix = $suffixStringArray[$que] ?? '';
         return trim("{$prefix}{$val} {$suffix}");
@@ -172,12 +165,10 @@ if (!function_exists('hasRelation')) {
             }
             $model = new $model;
         }
-
         if (!$model instanceof Model) {
             return false;
         }
 
-        // Get all relation methods
         return method_exists($model, $relation) && $model->$relation() instanceof \Illuminate\Database\Eloquent\Relations\Relation;
     }
 }
@@ -185,16 +176,11 @@ if (!function_exists('hasRelation')) {
 if (!function_exists('extractSuburbFromAddress')) {
     function extractSuburbFromAddress(string $address): ?string
     {
-        // Split by commas first
         $parts = array_map('trim', explode(',', $address));
-
-        // Look through parts for the one that contains the state code (QLD, NSW, VIC, etc.)
         $stateCodes = ['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA'];
-
         foreach ($parts as $part) {
             foreach ($stateCodes as $code) {
                 if (stripos($part, " $code") !== false) {
-                    // Remove state code, keep only suburb name
                     $suburb = trim(str_ireplace($code, '', $part));
                     return $suburb ?: null;
                 }
@@ -210,7 +196,6 @@ if (!function_exists('getStartEndTimeByMinutes')) {
     {
         $start = now()->subMinutes($minutes);
         $end = now();
-
         return [
             'startTime' => $start->format($formate),
             'endTime'   => $end->format($formate),
@@ -222,14 +207,11 @@ if (!function_exists('make_transaction_date')) {
     function make_transaction_date(string $date, $formate = 'Y-m-d H:i:s'): string
     {
         if (is_numeric($date)) {
-            // Handle milliseconds timestamp
             if (strlen($date) > 10) {
-                // Milliseconds → convert to seconds
                 $date = intval($date) / 1000;
             }
             return date($formate, $date);
         } else {
-            // Already a date string → just normalize
             return date($formate, strtotime($date));
         }
     }
@@ -248,17 +230,12 @@ if (!function_exists('findUserPercentage')) {
     {
         $profileQuestionsFor = QuestionConstants::SESSION_QUESTIONS_FOR['profile'] ?? [];
         $totalQuestionsId = Question::where('section', 1)->whereIn('question_for', $profileQuestionsFor)->pluck('id');
-
-        // 2. Get number of distinct question_ids this user has answered
         $answeredQuestions = QuestionAnswerUser::where('user_id', $userId)
             ->whereIn('question_id', $totalQuestionsId)
             ->whereNull('deleted_at') // if soft deletes are used
             ->distinct('question_id')
             ->count('question_id');
-
-        // 3. Calculate percentage by helper function
         $completionPercentage = percentageCalculator(count($totalQuestionsId), $answeredQuestions);
-
         return [
             'total_questions' => count($totalQuestionsId),
             'answered_questions' => $answeredQuestions,
