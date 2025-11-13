@@ -18,7 +18,7 @@
               <table border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td align="center">
-                    <img src="{{asset('assets/images/logo.png')}}" alt="Homee Logo" style="width: 100px;" width="100px">
+                    <img src="{{asset('assets/img/logo.png')}}" alt="Homee Logo" style="width: 100px;" width="100px">
                 
                   </td>
                 </tr>

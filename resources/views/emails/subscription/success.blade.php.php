@@ -27,7 +27,7 @@
                         <tr>
                             <td
                                 style="background:#fff1e9; background-color: #fff1e9; color: #000; font-weight: bold; font-size: 20px; text-align:center; padding:15px 0 15px;">
-                                  <img src="{{ asset('assets/images/emaillogo.png') }}"
+                                  <img src="{{ asset('assets/img/logo.png') }}"
                                     style="height: 100px; width: 100px;" />
                             </td>
                         </tr>

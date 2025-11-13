@@ -63,15 +63,15 @@ class ApiSubscriptionController extends BaseApiController
                 switch ($plan->value_type) {
                     case 'boost':
                         $user->boosts()->increment('boost_count', $plan->value);
-                        $msg = "Boosts are added to user’s account balance.";
+                        $msg = __('messages.boost_added');
                         break;
                     case 'key':
                         $user->keys()->increment('key_count', $plan->value);
-                        $msg = "Keys are added to user’s account balance.";
+                        $msg =  __('messages.key_added');
                         break;
                     default:
                         $this->addSubscription($user, $plan);
-                        $msg = 'Subscription activated successfully.';
+                        $msg = __('messages.item_activated', ['item' => 'Subscription']);
                         $boost_count = 2;
                         $key_count = 3;
                         if ($user->role == 3) {
@@ -88,7 +88,7 @@ class ApiSubscriptionController extends BaseApiController
                 ]);
             } else {
                 DB::rollBack();
-                return ApiResponse::error('token verification failed');
+                return ApiResponse::error(__('messages.verification_failed', ['item' => 'token']));
             }
         } catch (\Exception $e) {
             DB::rollBack();
@@ -153,7 +153,7 @@ class ApiSubscriptionController extends BaseApiController
             'expires_at' => $expireTime,
         ]);
         return ApiResponse::success([
-            'message' => 'Your profile will be shown at the top for 24 hours.',
+            'message' => __('messages.profile_on_top'),
             'data'   => $usage
         ]);
     }
@@ -172,7 +172,7 @@ class ApiSubscriptionController extends BaseApiController
         $boost = $room->boosts()->first();
         $userBoost = $curreantUser->boosts()->first();
         if (!$boost || $boost->boost_count <= 0) {
-            return ApiResponse::error('No boosts available.');
+            return ApiResponse::error(__('messages.no_boost'));
         }
         $userBoost->decrement('boost_count', 1);
         $data = $room->boostUsages()->create([
@@ -180,7 +180,7 @@ class ApiSubscriptionController extends BaseApiController
             'expires_at' => $expireTime,
         ]);
         return ApiResponse::success([
-            'message' => 'Your room will be shown at the top for 24 hours.',
+            'message' => __('messages.room_on_top'),
             'data'   => $data
         ]);
     }
@@ -191,14 +191,14 @@ class ApiSubscriptionController extends BaseApiController
         $currentTime = now();
         $key = $curreantUser->keys()->first();
         if (!$key || $key->key_count <= 0) {
-            return ApiResponse::error('No golden keys available.');
+            return ApiResponse::error(__('messages.no_key'));
         }
         $key->decrement('key_count', 1);
         $data = $curreantUser->keyUsages()->create([
             'used_at'   => $currentTime,
         ]);
         return ApiResponse::success([
-            'message' => 'Key activated successfully!',
+            'message' => __('messages.item_activated',['item' => 'Key']),
             'data'   => $data
         ]);
     }
@@ -222,7 +222,7 @@ class ApiSubscriptionController extends BaseApiController
         }
         $key->increment('key_count', 1);
         return ApiResponse::success([
-            'message' => 'Key activated successfully!',
+            'message' =>  __('messages.item_activated',['item' => 'Key']),
         ]);
     }
 

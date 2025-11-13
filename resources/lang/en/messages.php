@@ -125,9 +125,25 @@ return [
     'tenant_no_data_found' => "No Homee's found. Try broadening your filters. 🫥",
 
     // subscription
-    // 'enable_room' => 'This feature requires a subscription. Click here to subscribe and get access instantly.',
     'enable_room' => 'You can only list one room on your current plan. Upgrade to Homee+ to add more! 🏠',
-    // 'enable_property' => 'This feature requires a subscription. Click here to subscribe and get access instantly.',
     'enable_property' => 'You can only list one property on your current plan. Upgrade to Homee+ to add more! 🏠',
-    // ''
+    'item_activated' => ':item activated successfully.',
+    'boost_added' => "Boosts are added to user’s account balance.",
+    'key_added' => "Keys are added to user’s account balance.",
+    'verification_failed' => ':item verification failed',
+    'no_boost' => 'No boosts available.',
+    'no_key' => 'No golden keys available.',
+    'profile_on_top' => 'Your profile will be shown at the top for 24 hours.',
+    'room_on_top' => 'Your room will be shown at the top for 24 hours.',
+
+    // chat
+    'chat_send' => ':item chat send successfully',
+    'chat_removed' => ':item chat removed successfully',
+    'chat_not_available' => 'No chat count available.',
+
+    'property_not_available' => "Your saved room property is no longer available.",
+    'room_not_available' => 'Your saved room is no longer available.',
+    'lifestyle_calculated' => 'Lifestyle match calculated successfully.',
+    'identity_verification_submitted' => 'You have already submitted identity verification. Please wait for review or update if rejected.',
+    'identity_under_review' => 'Verification ID submitted. Your identity is under review.',
 ];

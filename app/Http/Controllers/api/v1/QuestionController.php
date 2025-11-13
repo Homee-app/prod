@@ -297,7 +297,7 @@ class QuestionController extends BaseApiController
 
             return $this->sendResponse([
                 'user' => new UserResource($user),
-            ], 'Questions submitted');
+            ], '');
         } catch (\Exception $e) {
             DB::rollBack();
             return $this->sendResponse([], __('messages.failed_to_submit_questions'), 500);

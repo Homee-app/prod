@@ -26,11 +26,11 @@ class RoomController extends BaseApiController
     /**
      * Display a listing of the resource.
      */
-    public function index($propertyId, Request $request)
+    public function index($propertyId, Request $req)
     {
         $property = Property::find($propertyId);
-        $perPage = $request->input("per_page", config('constants.per_page', 10));
-        $isPaginate = filter_var($request->input('is_paginate', 'true'), FILTER_VALIDATE_BOOLEAN);
+        $perPage = $req->input("per_page", config('constants.per_page', 10));
+        $isPaginate = filter_var($req->input('is_paginate', 'true'), FILTER_VALIDATE_BOOLEAN);
 
         if (!$property?->id) {
             return ApiResponse::notFound(__('messages.not_found', ['item' => 'Property']));
@@ -51,9 +51,9 @@ class RoomController extends BaseApiController
      * Store a newly created resource in storage.
      */
 
-    public function store($propertyId, Request $request)
+    public function store($propertyId, Request $req)
     {
-        $user = $request->user();
+        $user = $req->user();
         $rules = [
             'room_id' => 'nullable|exists:' . Room::class . ',id',
             'answers' => 'required|array',
@@ -62,14 +62,14 @@ class RoomController extends BaseApiController
             'answers.*.answer' => 'nullable|string',
         ];
 
-        if ($request->filled('room_id')) {
+        if ($req->filled('room_id')) {
             $rules['answers.*.file'] = 'nullable|array|max:11';
         } else {
             $rules['answers.*.file'] = 'nullable|array|max:11';
             $rules['answers.*.file.*'] = 'file|mimes:jpg,jpeg,png,mp4,mov,avi|max:51200'; // base64 or saved paths // 50 mb  
         }
 
-        $request->validate($rules);
+        $req->validate($rules);
 
         // if($user->role != 3){
         //     return ApiResponse::error(__('messages.unauthorized'), 401);
@@ -80,12 +80,12 @@ class RoomController extends BaseApiController
             return ApiResponse::notFound(__('messages.not_found', ['item' => 'Property']));
         }
 
-        $answers = $request->answers;
-        $roomId = $request->room_id ?? null;
+        $answers = $req->answers;
+        $roomId = $req->room_id ?? null;
         $questionAnswerData = $imagePaths = [];
         $propertyStatus = $property->status == '1' ? 1 : 0;
         if ($roomId) {
-            $questionIds = collect($request->answers)->pluck('question_id')->unique();
+            $questionIds = collect($req->answers)->pluck('question_id')->unique();
             $room = Room::where('property_id', $propertyId)->whereStatus('1')->find($roomId);
             if (!$room?->id) {
                 return ApiResponse::notFound(__('messages.not_found', ['item' => 'Room']));
@@ -130,13 +130,13 @@ class RoomController extends BaseApiController
             if (!empty($questionAnswerData)) {
                 QuestionAnswerUser::insert($questionAnswerData);
                 DB::commit();
-                if ($request->room_id) {
-                    $roomTitle = Cache::remember("room_title_{$request->room_id}",  now()->addMinutes(1), function () use ($request, $questionAnswerData) {
+                if ($req->room_id) {
+                    $roomTitle = Cache::remember("room_title_{$req->room_id}",  now()->addMinutes(1), function () use ($req, $questionAnswerData) {
                         return collect($questionAnswerData)
                             ->where('question_id', 65)
                             ->pluck('answer')
                             ->first()
-                            ?? QuestionAnswerUser::whereRoomId($request->room_id)
+                            ?? QuestionAnswerUser::whereRoomId($req->room_id)
                             ->whereQuestionId(65)
                             ->value('answer');
                     });
@@ -149,7 +149,7 @@ class RoomController extends BaseApiController
                     }
                     app(NotificationService::class)->send(
                         $notifyType,
-                        $request->room_id,
+                        $req->room_id,
                         $roomTitle,
                         $room->first_image_path,
                         null,
@@ -168,8 +168,7 @@ class RoomController extends BaseApiController
                 'property.property_owner.user',
                 'property.nearbyPlaces'
             ])->find($roomId);
-            return ApiResponse::success(new RoomResouce($newRoom), __('messages.success_msg', ['item' => 'Room ' . ($request->room_id ? 'updated' : 'created')]));
-            // return ApiResponse::success(new RoomResouce($room),__('messages.success_msg',['item'=> 'Room created']));
+            return ApiResponse::success(new RoomResouce($newRoom), __('messages.success_msg', ['item' => 'Room ' . ($req->room_id ? 'updated' : 'created')]));
         } catch (\Exception $e) {
             DB::rollBack();
             $error = $e->getMessage() . ' - ' . $e->getFile() . ' - ' . $e->getLine();
@@ -183,9 +182,9 @@ class RoomController extends BaseApiController
      */
 
 
-    public function show(Request $request, $propertyId, $id)
+    public function show(Request $req, $propertyId, $id)
     {
-        $currentUser = $request->user();
+        $currentUser = $req->user();
         $property = Property::find($propertyId);
 
         // Check if property exists
@@ -194,7 +193,7 @@ class RoomController extends BaseApiController
         }
 
         if ($property->status != 1) {
-            return ApiResponse::notFound("Your saved room property is no longer available.");
+            return ApiResponse::notFound(__('messages.property_not_available'));
         }
 
         $room = $property->rooms()->with([
@@ -213,7 +212,7 @@ class RoomController extends BaseApiController
 
         if ($currentUser->role == 2) {
             if ($room->status != 1) {
-                return ApiResponse::notFound("Your saved room is no longer available.");
+                return ApiResponse::notFound(__('messages.room_not_available'));
             }
         }
 
@@ -223,9 +222,9 @@ class RoomController extends BaseApiController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request, $propertyId, $id)
+    public function destroy(Request $req, $propertyId, $id)
     {
-        $user = $request->user();
+        $user = $req->user();
         if ($user->role != 3) {
             return ApiResponse::error(__('messages.unauthorized'), 401);
         }
@@ -254,14 +253,14 @@ class RoomController extends BaseApiController
         return ApiResponse::success([], __('messages.success_msg', ['item' => 'Room deleted']));
     }
 
-    public function statusUpdate(Request $request, $propertyId, $roomId)
+    public function statusUpdate(Request $req, $propertyId, $roomId)
     {
-        $user = $request->user();
+        $user = $req->user();
         if ($user->role != 3) {
             return ApiResponse::error(__('messages.unauthorized'), 401);
         }
 
-        if(!$user->can_add_room && $request->status == 1){
+        if(!$user->can_add_room && $req->status == 1){
             return ApiResponse::error(__('messages.enable_room'), 400);
         }
         
@@ -276,7 +275,7 @@ class RoomController extends BaseApiController
             return ApiResponse::notFound(__('messages.not_found', ['item' => 'Property']));
         }
 
-        $request->validate([
+        $req->validate([
             'status' => 'required|boolean',
         ]);
 
@@ -286,13 +285,13 @@ class RoomController extends BaseApiController
             return ApiResponse::notFound(__('messages.not_found', ['item' => 'Room']));
         }
 
-        $room->status = $request->status;
+        $room->status = $req->status;
         $roomTitle = Cache::remember("room_title_{$room->id}",  now()->addMinutes(config('cache.default_time')), function () use ($room) {
             return QuestionAnswerUser::whereRoomId($room->id)->whereQuestionId(65)->value('answer');
         });
         $room->save();
 
-        if ($request->status == 0) {
+        if ($req->status == 0) {
             app(NotificationService::class)->send(
                 'room_status_update',
                 $roomId,
@@ -304,12 +303,12 @@ class RoomController extends BaseApiController
             );
         }
 
-        return ApiResponse::success(new RoomResouce($room), __('messages.success_msg', ['item' => 'Room ' . $statusArray[$request->status]]));
+        return ApiResponse::success(new RoomResouce($room), __('messages.success_msg', ['item' => 'Room ' . $statusArray[$req->status]]));
     }
 
-    public function getGroupedByDetails(Request $request, $propertyId, $roomId)
+    public function getGroupedByDetails(Request $req, $propertyId, $roomId)
     {
-        $user = $request->user();
+        $user = $req->user();
         $property = Property::with(['property_owner.user'])->find($propertyId);
 
         if (!$property?->id) {
@@ -403,10 +402,10 @@ class RoomController extends BaseApiController
         return ApiResponse::success($data);
     }
 
-    public function getRoomImages(Request $request, $propertyId, $id)
+    public function getRoomImages(Request $req, $propertyId, $id)
     {
-        $perPage = $request->input("per_page", config('constants.per_page', 10));
-        $isPaginate = filter_var($request->input('is_paginate', 'false'), FILTER_VALIDATE_BOOLEAN);
+        $perPage = $req->input("per_page", config('constants.per_page', 10));
+        $isPaginate = filter_var($req->input('is_paginate', 'false'), FILTER_VALIDATE_BOOLEAN);
         $property = Property::find($propertyId);
         if (!$property?->id) {
             return ApiResponse::notFound(__('messages.not_found', ['item' => 'Property']));
@@ -424,14 +423,14 @@ class RoomController extends BaseApiController
         return ApiResponse::success(ImageResouce::collection($images));
     }
 
-    public function toggleLike(Request $request)
+    public function toggleLike(Request $req)
     {
-        $tenant = $request->user();
+        $tenant = $req->user();
         if ($tenant->role != 2) {
             return ApiResponse::error(__('messages.unauthorized'),  401);
         }
 
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($req->all(), [
             'room_id' => 'required',
         ]);
 
@@ -439,7 +438,7 @@ class RoomController extends BaseApiController
             return ApiResponse::error($validator->errors()->first(), 422);
         }
 
-        $room = Room::find($request->room_id);
+        $room = Room::find($req->room_id);
         if (!$room?->id) {
             return ApiResponse::notFound(__('messages.not_found', ['item' => 'Room']));
         }

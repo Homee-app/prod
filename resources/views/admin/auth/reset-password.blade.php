@@ -9,7 +9,7 @@
     <div class="col-lg-6  col-md-12 login-right">
         <div class="loginRightImg">
             <div class="login-container">
-                <div class="text-center mb-5"><img src="{{ asset('assets/images/logo-login.svg') }}"></div>
+                <div class="text-center mb-5"><img src="{{ asset('assets/img/logo.png') }}"></div>
                 <form method="post" action="{{ route('admin.resetPassword', $token) }}">
                     @csrf
                     <div class="whiteBg">

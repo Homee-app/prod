@@ -687,7 +687,7 @@ class ApiAuthController extends BaseApiController
 
         if ($existingIdentity && $existingIdentity->verification_status !== 'rejected') {
             return $this->sendError(
-                'You have already submitted identity verification. Please wait for review or update if rejected.',
+                __('messages.identity_verification_submitted'),
                 [],
                 403
             );
@@ -734,8 +734,8 @@ class ApiAuthController extends BaseApiController
                 'id_verification_status' => $userIdentity->verification_status,
                 'front_of_id_url'        => asset($userIdentity->front_of_id_path),
                 'back_of_id_url'         => $userIdentity->back_of_id_path ? asset($userIdentity->back_of_id_path) : null,
-            ], 'Verification ID submitted. Your identity is under review.');
-        } catch (\Illuminate\Validation\ValidationException $e) {
+            ], __('messages.identity_under_review'));
+        } catch (ValidationException $e) {
             return $this->sendError('Validation Failed', $e->errors(), 422);
         } catch (\Exception $e) {
             Log::error("Identity verification failed for user ID {$user->id}: " . $e->getMessage(), ['exception' => $e]);

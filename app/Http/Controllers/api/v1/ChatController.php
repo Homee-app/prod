@@ -73,11 +73,11 @@ class ChatController extends BaseApiController
                 );
             }
             if ($notification) {
-                return ApiResponse::success(new NotificationResource($notification), 'chat send successfully');
+                return ApiResponse::success(new NotificationResource($notification), __('messages.chat_send' , ['item' => '']));
             }
         } catch (\Exception $e) {
             $error = $e->getMessage() . ' - ' . $e->getLine();
-            return ApiResponse::success([], $error);
+            return ApiResponse::success([], __('messages.something_went_wrong'));
         }
     }
 
@@ -85,7 +85,7 @@ class ChatController extends BaseApiController
     {
         $user = $request->user();
         Cache::put("active_chat_user_" . $user->id, null);
-        return ApiResponse::success([], 'Active chat removed successfully');
+        return ApiResponse::success([], __('messages.chat_removed' , ['item' => 'Active']));
     }
 
 
@@ -94,7 +94,7 @@ class ChatController extends BaseApiController
         $request->validate(['chatId' => 'required|string']);
         $user = $request->user();
         Cache::put("active_chat_user_" . $user->id, $request->chatId);
-        return ApiResponse::success([], 'Active chat set successfully');
+        return ApiResponse::success([], __('messages.chat_send' , ['item' => 'Active']));
     }
 
     public function getChatCount(Request $request)
@@ -112,7 +112,7 @@ class ChatController extends BaseApiController
         $user = $request->user();
 
         if ($user->chat_count <= 0) {
-            return ApiResponse::error('No chat count available', 400);
+            return ApiResponse::error(__('messages.chat_not_available'), 400);
         }
 
         $user->decrement('chat_count', 1);

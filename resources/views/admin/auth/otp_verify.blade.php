@@ -11,7 +11,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="mb-3">
-                <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="Logo">
               </div>
             </div>
   

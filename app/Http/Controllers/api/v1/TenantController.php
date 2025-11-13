@@ -48,7 +48,7 @@ class TenantController extends BaseApiController
 
         return $this->sendResponse([
             'lifestyle_match_percentage' => $matchPercentage
-        ], 'Lifestyle match calculated successfully.');
+        ], __('messages.lifestyle_calculated'));
     }
 
     private function getSliderAnswersForUser($userId, array $questionIds)
